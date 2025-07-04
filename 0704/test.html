@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+
+<body>
+    <p id="result">結果</p>
+
+
+
+    <script>
+        while (1) {
+            var score = prompt("請輸入成績");
+            var pass = 0;
+            var notpass = 0;
+            var total = 0;
+            if (score == null) {
+                break;
+            }
+
+
+            if (score >= 0 && score <=100) {
+                alert("你的成績=>" + score);
+            } else if (score < 0 && score>100) {
+                alert(score + "=> err！不是有效範圍0-100，請重新輸入！");
+                continue;
+            } else if (isNaN(Number(score))) {
+                alert(score + "err！非數字，請重新輸入！");
+                continue;
+            }else if(score == ""){
+                alert("不能空白，請重新輸入");
+                continue;
+            }
+
+
+            if (score <= 60 && score > 60) {
+                pass="及格人數";
+                notpass="不及格分數";
+                alert(pass);
+            } else {
+                alert(notpass);
+            }
+
+            if()
+        }
+    </script>
+</body>
+
+</html>
