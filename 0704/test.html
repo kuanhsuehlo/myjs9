@@ -7,12 +7,7 @@
     <title>Document</title>
 </head>
 
-<ul>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-</ul>
+
 
 <body>
     <p id="result">結果</p>
@@ -20,40 +15,64 @@
 
 
     <script>
+        var pass = 0;
+        var notpass = 0;
+        var total = 0;
+        var avarage = 0.0;
         while (1) {
+            // 輸入成績
             var score = prompt("請輸入成績");
-            var pass = 0;
-            var notpass = 0;
-            var total = 0;
             if (score == null) {
+                var pass = 0;
+                var notpass = 0;
+                var total = 0;
+                var avarage = 0.0;
+                alert("取消輸入，請重新輸入成績");
                 break;
             }
+            
 
-
-            if (score >= 0 && score <=100) {
-                alert("你的成績=>" + score);
-            } else if (score < 0 && score>100) {
-                alert(score + "=> err！不是有效範圍0-100，請重新輸入！");
-                continue;
-            } else if (isNaN(Number(score))) {
-                alert(score + "err！非數字，請重新輸入！");
-                continue;
-            }else if(score == ""){
+            if (score.trim() == "") {
                 alert("不能空白，請重新輸入");
                 continue;
             }
-
-
-            if (score <= 60 && score > 60) {
-                pass="及格人數";
-                notpass="不及格分數";
-                alert(pass);
-            } else {
-                alert(notpass);
+            // 結束輸入(不能放在(不是有效範圍0-100，請重新輸入)的後面，會被加進去，結束不了)
+            if (score == "-1") {
+                alert("輸入結束");
+                break;
+            }
+            
+            if (score < 0 || score > 100) {
+                alert(score + "=> err！不是有效範圍0-100，請重新輸入！");
+                continue;
             }
 
-            if()
+            // 檢查是否錯誤
+            if (isNaN(Number(score))) {
+                alert(score + "err！非數字，請重新輸入！");
+                continue;
+            }
+
+            var numScore = Number(score); // 重新宣告，把字串轉數字，沒有重新宣告不會加總
+
+            // 統計人數
+            if (numScore >= 60) {
+                pass++;
+            } else {
+                notpass++;
+            }
+            total = total + numScore;
+            if (pass + notpass > 0) {
+                avarage = total / (pass + notpass);
+            }
         }
+
+        var result = document.getElementById("result"); //顯示結果
+        result.innerHTML =
+            "及格人數：" + pass + "<br>" +
+            "不及格人數：" + notpass + "<br>" +
+            "總分：" + total + "<br>" +
+            "平均分：" + avarage.toFixed(2) + "<br>";
     </script>
 </body>
 
