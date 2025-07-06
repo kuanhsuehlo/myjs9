@@ -1,17 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
-        var number = 0;
-        if(number>=1 || number <= 100){
-            number=Math.random()*100;
-            console.log(Math.floor()+1);
+        // 請使用亂數產生一個值（1-100）
+        // 每次錯誤時，出現提示如下
+        // 例如：亂數值：60
+        // 第1次：50 => 太小了（提示：50-100）
+        // 第2次：90 => 太大了（提示：50-90）
+        // 第3次：80 => 太大了（提示：50-80）
+        // 第4次：55 => 太小了（提示：55-80）
+        // 第5次：60 => 猜對了
+        var ranValue = Math.random() * 100; 
+        var answer = Math.floor(ranValue) + 1;
+        var min = 1;
+        var max = 100;
+        var count = 1;
+
+        while (1) {
+            var input = prompt("第" + count + "次：請輸入" + min + "~" + max + "的整數");
+
+            if (input === null) {
+                alert("輸入取消，遊戲結束！");
+                break;
+            }
+
+            var guess = parseInt(input);
+
+            if (isNaN(guess) || guess < min || guess > max) {
+                alert("請輸入" + min + "~" + max + "之間的數字");
+                continue;
+            }
+            if (guess === 60) {
+                alert("第" + count + "次：" + guess + "=> 猜對了，遊戲結束！");
+                break;
+            }
+            
+            if (guess < answer || guess < 60) {
+                alert("第" + count + "次：" + guess + "=> 太小了 提示：" + min + "~" + max);
+                min = guess;
+            } else if(guess > answer || guess >= 90){
+                alert("第" + count + "次：" + guess + "=> 太大了提示：" + min + "~" + max);
+                max = guess;
+            }
+            count++;
+
         }
     </script>
 </body>
+
 </html>
