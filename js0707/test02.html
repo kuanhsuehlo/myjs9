@@ -9,6 +9,7 @@
 
 <body>
     <script>
+        // 訂正
         // 找出最大值和最小值
         // for
         let arr3 = [5, 60, 3, 90, 33, 1, 100];
@@ -42,8 +43,14 @@
         arr3.forEach((h)=>{
             if(h>max){
                 h=max;
+            }else if(h<min) {
+                min = n;
             }
         })
+
+        console.log(`max=${max}, min=${min}`);
+
+
 
 
     </script>
