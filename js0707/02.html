@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>陣列常用的方法</h2>
+
+
+    <script>
+        // 建立一個陣列，再放任意五個值
+        let arr1 = [1, 2, 3];
+        console.log("尚未排序前:"+arr1);
+
+        // 使用箭頭函式寫法
+        arr1.sort((a,b) => {
+            // 遞增排序
+            return a-b;
+        });
+        console.log("遞增排序後:"+arr1);
+
+
+        arr1.sort((a,b)=>{
+            // 遞減順序
+            return b-a;
+        });
+
+        // 使用迴圈，顯示陣列中的內容
+        // for (let i = 0; i < arr1.length; i++) {
+        //     console.log(arr1[i]);
+        // }
+
+
+
+    </script>
+
+
+</body>
+
+</html>
