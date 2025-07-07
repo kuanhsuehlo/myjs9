@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 找出最大值和最小值
+        // for
+        let arr3 = [5, 60, 3, 90, 33, 1, 100];
+        let max = arr3[0];
+        let min = arr3[0];
+        for (let a = 0; a < arr3.length; a++) {
+            if (arr3[a] > max) {
+                max = arr3[a];
+            } else if (arr3[a] < min) {
+                min = arr3[a];
+            }
+        }
+        console.log(`max=${max},min=${min}`);
+
+        // for of
+
+        max = arr3[0];
+        min = arr3[0];
+        for(let h of arr3){
+            if( h>max ){
+                max=h;
+            }else if(h<min){
+                min=h;
+            }
+        }
+        console.log(`max=${max},min=${min}`);
+
+        // forEach
+        max = arr3[0];
+        min = arr3[0];
+        arr3.forEach((h)=>{
+            if(h>max){
+                h=max;
+            }
+        })
+
+
+    </script>
+</body>
+
+</html>
