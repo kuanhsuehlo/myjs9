@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr1 = ['html', 'css', 'js', 'figma', 'ui'];
+
+        // for(n of arr1){
+        //     if(n=="css"){
+
+        //     }
+        // }
+        // 方法1 比較簡單的
+        for (let i = 0; i < arr1.length; i++) {
+            if (arr1[i] === "css");
+            console.log(`css找到了，在第${i + 1}個位置`);
+            break;
+        }
+
+        // 方法2 進階 indexOf()
+        let searchIndex = arr1.indexOf("css3");
+        if (searchIndex !== -1) {
+            console.log(`找到了，在第${searchIndex}個位置`);
+        } else {
+            console.log('不存在');
+        }
+
+        // 方法3 includes(item)
+        let find = arr1.includes("css");
+        // 三元運算子寫法
+        // (條件式)?條件成立:條件不成立
+        (find) ? console.log("找到了") : console.log("不存在");// 比較簡易的判斷
+        // if(find){
+        //     console.log("找到了");
+        // }else{
+        //     console.log("不存在")
+        // }
+
+    </script>
+</body>
+
+</html>
