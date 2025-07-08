@@ -81,20 +81,20 @@ function lott2() {
 
 // 今彩539
 function lott3() {
-    // 第一區:1-38取六個
+    // 第一區:1-39取六個
     // 建立存放號碼的空陣列
     let lott = []; // 宣告一個空陣列
 
     // while迴圈
 
     while (1) {
-        // 檢查已經有6個號碼
-        if (lott.length == 6) { // .length 取的陣列的長度
+        // 檢查已經有5個號碼
+        if (lott.length == 5) { // .length 取的陣列的長度
             break; //中斷後跳出迴圈
         }
 
         // 亂數取號碼
-        let lottNo = Math.floor(Math.random() * 38) + 1; // 宣告亂數
+        let lottNo = Math.floor(Math.random() * 39) + 1; // 宣告亂數
         // 檢查是反重複
         if (lott.includes(lottNo) == false) {
             lott.push(lottNo);
