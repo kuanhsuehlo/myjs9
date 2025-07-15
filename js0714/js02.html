@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="name">請輸入姓名</label>
+    <input type="text" id="name">
+    <button onclick="sayHi3(getName())"></button>
+    <!-- p段落的ID名稱 -->
+    <p id="showData"></p> 
+    <script>
+        // 寫法1 : 無參數，無回傳值
+        function sayHi1(){
+            // 取得文字方塊內容
+            // 文字方塊對應input
+            let name1 = document.getElementById("name").value;
+            // 取的顯示段落
+            // 這個對應p段落
+            let showData = document.getElementById("showData");
+            // 顯示結果
+            showData.textContent=`Hi,${name1}`;
+        }
+
+        // 寫法2 : 無參數，有回傳值(此範例不適合)
+        function sayHi2(){
+            // 取得文字方塊內容
+            // 文字方塊對應input
+            let name1 = document.getElementById("name").value;
+            // 取的顯示段落
+            // 這個對應p段落
+            let showData = document.getElementById("showData");
+            // 顯示結果
+            showData.textContent=`Hi,${name1}`;
+
+            return name1;
+        }
+
+
+        // 寫法3 : 有參數，無回傳值
+        function sayHi3(userName){
+            // 取的顯示段落
+            // 這個對應p段落
+            let showData = document.getElementById("showData");
+            // 顯示結果
+            showData.textContent=`Hi,${userName}`;
+        }
+
+        // 取得姓名 ( 無參數，有傳回值 )
+        function getName(){
+            let name1 = document.getElementById("name").value;
+            return name1;
+        }
+
+        // 寫法4 : 有參數，有回傳值
+        function sayHi4(userName){
+            return userName;
+        }
+
+        if()
+
+
+    </script>
+</body>
+</html>

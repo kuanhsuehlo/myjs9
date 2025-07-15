@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>函式</h1>
+    請輸入姓名 : <input type="text" id="name">
+    <button onclick="sayHi3(getName())">確定</button>
+    <p id="show"></p>
+    <script>
+        // // 建立函式
+        // // 有參數，沒有傳回值
+        // function sum(a, b) { // 變數不能數字開頭，也不能空白
+        //     // let a=5;
+        //     // let b=3;
+        //     console.log(a + b);
+        // }
+
+        // 有參數，有傳回值
+        function sum(a, b) {
+            // let c = a + b; //可省略
+            // return c 
+            return a + b; // 回傳
+        }
+
+        // 呼叫函式
+        // console.log(sum(5, 3);); // 8
+        // 單純用函式的參數放進document.write會出現錯誤，要把document放在函式內
+        // 賦予名稱就可以
+        // let n1 = 50; // 宣告
+        // let n2 = 30;
+        // let tot = sum(n1, n2); // sum(a, b)替換成名稱
+        // document.write(`${n1}+${n2}=${tot}`) //在輸出
+        // sum(-1, 3); // 2
+        // sum(-1, -3); // -4
+
+
+        // 無參數，無傳回值
+        function sayHi() {
+            alert("Hi");
+        }
+
+        // sayHi();
+
+        // 有參數，無傳回值
+        function sayHi2(name) {
+            alert("Hi" + name);
+        }
+
+
+        let userName = prompt("請輸入姓名");
+        sayHi2(userName)
+
+        // 無參數，無傳回值(for 表單文字方塊)
+        function sayHi3() {
+            let name = document.getElementById("name");
+            let show = document.getElementById("show");
+            // 純文字
+            // 如果三個要顯示，要做三個段落
+            show.innerHTML = "Hi,<br>" + name.value;
+            // show.textContent="Hi"+name.value;
+            // show.innerText="Hi,\n"+name.value;
+        }
+
+
+        function sayHi4(){
+            // 取得顯示資料位置
+            let show = document.getElementById("show");
+            show.textContent="Hi,"+getName();
+        }
+
+        function getName(){
+            let name = document.getElementById("name");
+            return name;
+        }
+
+
+    </script>
+</body>
+
+</html>
