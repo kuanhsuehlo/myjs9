@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 建立一個add()函式，計算所有參數總和
+        let add = (n1, n2, n3 = 0, n4 = 0) => {
+            let tot = n1 + n2 + n3 + n4;
+            return tot;
+        }
+        // 其餘參數 (常用)
+        let add2 = (...number) => {
+            let tot = 0;
+            // for of 迴圈
+            for (let n of number) {
+                tot += n;
+            }
+            // for 迴圈作法
+            for (let i = 0; i < number.length; i++) {
+                tot += number[i]; // 注意要有number中括號
+            }
+            return tot;
+        }
+        console.log(add(5, 3));
+        console.log(add(5, 3, 8));
+        console.log(add(5, 3, 8, 10));
+        console.log(add(5, 3, 8, 10, 100));
+
+        // 其餘陣列參數 放在陣列時，一定要有其餘參數 (不常用到)
+        let add3 = (...[x, y, z = 0]) => {
+            console.log(x);
+            console.log(y);
+            console.log(z);
+
+            return x + y + z;
+        }
+        console.log(add(5, 3));
+        console.log(add(5, 3, 8));
+        console.log(add(5, 3, 8, 10));
+        console.log(add(5, 3, 8, 10, 100));
+    </script>
+</body>
+
+</html>
